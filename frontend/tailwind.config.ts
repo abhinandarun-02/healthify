@@ -1,13 +1,13 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -22,17 +22,28 @@ const config = {
         border: "#e2e8f0", // Default border color
         input: "#e2e8f0", // Border color for inputs such as <Input />, <Select />, <Textarea />
         ring: "#2563eb", // Used for focus ring
-        
+
         // Default background color of <body />...etc
         background: "#ffffff",
         foreground: "#020817",
-        
+        indigo: {},
         // Primary colors for <Button />
         primary: {
           DEFAULT: "#2563eb",
           foreground: "#f8fafc",
+          background: {
+            100: "#d3e0fb",
+            200: "#a8c1f7",
+            300: "#7ca1f3",
+            400: "#5182ef",
+            500: "#2563eb",
+            600: "#1e4fbc",
+            700: "#163b8d",
+            800: "#0f285e",
+            900: "#07142f",
+          },
         },
-        
+
         // Secondary colors for <Button />
         secondary: {
           DEFAULT: "#f1f5f9",
@@ -70,9 +81,9 @@ const config = {
         },
       },
       borderRadius: {
-        lg: "0.5rem",
-        md: "calc(0.5rem - 2px)",
-        sm: "calc(0.5rem - 4px)",
+        lg: "0.7rem",
+        md: "calc(0.7rem - 2px)",
+        sm: "calc(0.7rem - 4px)",
       },
       keyframes: {
         "accordion-down": {
@@ -91,6 +102,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;
