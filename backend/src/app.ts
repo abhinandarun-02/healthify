@@ -1,24 +1,27 @@
-import express, { Request, Response } from "express";
-import cors from 'cors';
-import morgan from "morgan";
-import helmet from "helmet";
+import express, { Request, Response } from 'express'
 
-require("dotenv").config();
+import cors from 'cors'
+import morgan from 'morgan'
+import helmet from 'helmet'
+import dotenv from 'dotenv'
 
-const app = express();
+import userRoutes from '@/routes/user.router'
 
-const PORT = process.env.PORT || 4000;
+dotenv.config()
 
-app.use(cors());
-app.use(morgan("dev"));
-app.use(helmet());
+const app = express()
 
+app.use(cors())
+app.use(morgan('dev'))
+app.use(helmet())
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
-app.get("/server-status", (req:Request, res:Response) => {
-    res.status(200).json({ message: "Server up and running!" });
-});
+app.use('/api/', userRoutes)
 
-app.listen(PORT, () => console.log(`Server up and running on port ${PORT}!`));
+app.get('/server-status', (req: Request, res: Response) => {
+  res.status(200).json({ message: 'Server up and running!' })
+})
+
+export default app
