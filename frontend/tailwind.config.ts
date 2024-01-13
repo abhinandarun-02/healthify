@@ -21,12 +21,12 @@ const config = {
       colors: {
         border: "#e2e8f0", // Default border color
         input: "#e2e8f0", // Border color for inputs such as <Input />, <Select />, <Textarea />
-        ring: "#2563eb", // Used for focus ring
+        ring: "#f1f5f9", // Used for focus ring
 
         // Default background color of <body />...etc
         background: "#ffffff",
         foreground: "#020817",
-        indigo: {},
+
         // Primary colors for <Button />
         primary: {
           DEFAULT: "#2563eb",
@@ -58,7 +58,7 @@ const config = {
 
         // Muted backgrounds such as <TabsList />, <Skeleton /> and <Switch />
         muted: {
-          DEFAULT: "#f1f5f9",
+          DEFAULT: "#dedede",
           foreground: "#64748b",
         },
 

@@ -25,9 +25,4 @@ export const navData: NavData[] = [
     name: "Chat",
     link: "/chat",
   },
-  {
-    id: 5,
-    name: "Appointment",
-    link: "/appointment",
-  },
 ];
