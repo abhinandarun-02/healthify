@@ -1,10 +1,17 @@
-import { Button } from '@/components/ui/button'
-import Image from 'next/image'
+import Footer from "@/components/marketing/footer";
+import About from "@/components/marketing/about";
+import Hero from "@/components/marketing/hero";
+import NavBar from "@/components/marketing/navbar/navbar";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {/* <Button>Click me</Button> */}
-    </main>
-  )
+    <>
+      <NavBar />
+      <main className="flex flex-col min-h-screen items-center justify-between p-24">
+        <Hero />
+        <About />
+      </main>
+      <Footer />
+    </>
+  );
 }

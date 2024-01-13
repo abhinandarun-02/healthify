@@ -7,7 +7,7 @@ import clsx from "clsx";
 
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "../../public/logo.png";
+import logo from "@/public/logo.png";
 import { navData } from "./nav-data";
 import Link from "next/link";
 

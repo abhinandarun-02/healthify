@@ -6,14 +6,14 @@ import logo from "@/public/logo.png";
 
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import MobileMenu from "@/components/navbar/mobile-navbar";
-import { navData } from "@/components/navbar/nav-data";
+import MobileMenu from "@/components/marketing/navbar/mobile-navbar";
+import { navData } from "@/components/marketing/navbar/nav-data";
 import SigninButton from "@/components/auth/signInButton";
 
 export default function NavBar() {
   return (
-    <header>
-      <nav className="bg-card border-border border-b px-4 lg:px-6 py-2.5">
+    <header className="fixed left-0 right-0">
+      <nav className="bg-card border-border border-b px-4 lg:px-6 py-3.5">
         <div className="w-full flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2">
             <Image src={logo} width={35} height={35} alt="Healthify Logo" />
@@ -40,7 +40,9 @@ export default function NavBar() {
           </ul>
           <div className="flex gap-8">
             <div className="flex gap-8 items-center">
-              <Button>Get started</Button>
+              <Link href="/dashboard">
+                <Button>Dashboard</Button>
+              </Link>
               <SigninButton />
             </div>
             <div className="justify-end lg:hidden">

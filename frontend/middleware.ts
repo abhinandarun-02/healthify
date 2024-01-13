@@ -47,9 +47,8 @@ export function middleware(request: NextRequest) {
   // Redirect if there is no locale
   if (pathnameIsMissingLocale) {
     const locale = getLocale(request);
-
     // The new URL is now /en/*
-    return NextResponse.rewrite(
+    return NextResponse.redirect(
       new URL(
         `/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
         request.url
@@ -60,8 +59,5 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   // Matcher ignoring `/_next/` and `/api/`
-  matcher: [
-    "/((?!api|_next/static|_next/image|favicon.ico).*)",
-    "/:lang*/profile",
-  ],
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
 };
