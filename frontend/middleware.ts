@@ -6,18 +6,6 @@ import { i18n } from "./i18n-config";
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
-import { withAuth } from "next-auth/middleware";
-
-export default withAuth({
-  callbacks: {
-    authorized: async ({ req, token }) => {
-      if (req.nextUrl.pathname.startsWith("/admin"))
-        return token?.role === "admin";
-      return !!token;
-    },
-  },
-});
-
 function getLocale(request: NextRequest): string | undefined {
   // Negotiator expects plain object so we need to transform headers
   const negotiatorHeaders: Record<string, string> = {};
