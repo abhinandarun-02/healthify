@@ -5,13 +5,13 @@ import { doctors } from "./_components/data";
 
 export const Page = () => {
   return (
-    <section className="px-8 mt-32">
+    <section className="px-8 mt-12">
       <div className="flex gap-4 relative">
         <Sidebar />
         <div className="w-full space-y-4">
-            {doctors.map((doctor, index) => (
-                <DoctorCard key={index} {...doctor} />
-                ))}
+          {doctors.map((doctor, index) => (
+            <DoctorCard key={index} {...doctor} />
+          ))}
         </div>
       </div>
     </section>
