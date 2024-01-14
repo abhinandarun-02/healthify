@@ -4,11 +4,10 @@ import Link from "next/link";
 
 import logo from "@/public/logo.png";
 
-import { Button, buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+
 import MobileMenu from "@/components/shared/navbar/mobile-navbar";
-import { navData } from "@/components/shared/navbar/nav-data";
 import SigninButton from "@/components/auth/signInButton";
+import NavLinks from "./nav-links";
 
 export default function NavBar() {
   return (
@@ -23,20 +22,7 @@ export default function NavBar() {
           </Link>
 
           <ul className="hidden font-medium lg:flex lg:items-center lg:space-x-2 lg:mt-0">
-            {navData.map((item, index) => (
-              <li key={index}>
-                <Link
-                  href={item.link}
-                  className={cn(
-                    buttonVariants({ variant: "link" }),
-                    "text-base text-muted-foreground hover:text-primary"
-                  )}
-                  aria-current="page"
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
+            <NavLinks/>
           </ul>
           <div className="flex gap-8">
             <div className="flex items-center">

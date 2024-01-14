@@ -6,10 +6,10 @@ import Features from "@/components/marketing/features";
 
 export default function Home() {
   return (
-    <>
+    <div className="py-20 px-24">
       <Hero />
       <Features />
       <About />
-    </>
+    </div>
   );
 }

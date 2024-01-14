@@ -26,7 +26,7 @@ export const Sidebar = () => {
     const { replace } = useRouter();
     const pathname = usePathname();
   return (
-    <div className="sidebar space-y-4  w-[210px] px-4 ">
+    <div className="sidebar space-y-4  w-[300px] px-4 ">
       <Button
         variant="outline"
         className="w-full text-primary hover:text-primary"
