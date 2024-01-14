@@ -34,13 +34,20 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Skeleton } from "../ui/skeleton";
+import { usePathname, useRouter } from "next/navigation";
 
 const SigninButton = () => {
   const { data: session, status } = useSession();
 
+  const router = useRouter();
+  const pathname = usePathname();
+
   if (status === "loading")
     return (
       <div className="flex gap-4 ml-auto items-center">
+        {pathname.split("/").length < 3 && (
+          <Button onClick={() => router.push("/dashboard")}>Dashboard</Button>
+        )}
         <Skeleton className="flex h-10 w-10 shrink-0 overflow-hidden rounded-full" />
         <Skeleton className="w-20 h-9 px-3" />
       </div>
@@ -49,10 +56,24 @@ const SigninButton = () => {
   if (session && session.user) {
     return (
       <div className="flex gap-4 ml-auto items-center">
-        <UserDropDown
-          image={session.user.image || ""}
-          name={session.user.name || ""}
-        />
+        {pathname.split("/").length < 3 && (
+          <Button onClick={() => router.push("/dashboard")}>Dashboard</Button>
+        )}
+        {pathname.split("/").length < 3 ? (
+          <Avatar className="cursor-pointer">
+            <AvatarImage
+              src={session.user.image || ""}
+              alt={session.user.name || ""}
+            />
+            <AvatarFallback delayMs={600}>{"AB"}</AvatarFallback>
+          </Avatar>
+        ) : (
+          <UserDropDown
+            image={session.user.image || ""}
+            name={session.user.name || ""}
+          />
+        )}
+
         <Button
           onClick={() => signOut()}
           variant="ghost"

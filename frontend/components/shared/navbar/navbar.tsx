@@ -6,8 +6,8 @@ import logo from "@/public/logo.png";
 
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import MobileMenu from "@/components/marketing/navbar/mobile-navbar";
-import { navData } from "@/components/marketing/navbar/nav-data";
+import MobileMenu from "@/components/shared/navbar/mobile-navbar";
+import { navData } from "@/components/shared/navbar/nav-data";
 import SigninButton from "@/components/auth/signInButton";
 
 export default function NavBar() {
@@ -39,10 +39,7 @@ export default function NavBar() {
             ))}
           </ul>
           <div className="flex gap-8">
-            <div className="flex gap-8 items-center">
-              <Link href="/dashboard">
-                <Button>Dashboard</Button>
-              </Link>
+            <div className="flex items-center">
               <SigninButton />
             </div>
             <div className="justify-end lg:hidden">

@@ -19,7 +19,10 @@ const config = {
     },
     extend: {
       colors: {
-        border: "#e2e8f0", // Default border color
+        border: {
+          DEFAULT: "#e2e8f0", // Default border color
+          secondary: "#2563eb", // Secondary border color
+        },
         input: "#e2e8f0", // Border color for inputs such as <Input />, <Select />, <Textarea />
         ring: "#f1f5f9", // Used for focus ring
 
@@ -29,18 +32,18 @@ const config = {
 
         // Primary colors for <Button />
         primary: {
-          DEFAULT: "#2563eb",
+          DEFAULT: "#2b59e0",
           foreground: "#f8fafc",
           background: {
-            100: "#d3e0fb",
-            200: "#a8c1f7",
-            300: "#7ca1f3",
-            400: "#5182ef",
-            500: "#2563eb",
-            600: "#1e4fbc",
-            700: "#163b8d",
-            800: "#0f285e",
-            900: "#07142f",
+            100: "#d5def9",
+            200: "#aabdf3",
+            300: "#809bec",
+            400: "#557ae6",
+            500: "#2b59e0",
+            600: "#2247b3",
+            700: "#1a3586",
+            800: "#11245a",
+            900: "#09122d",
           },
         },
 
@@ -77,7 +80,8 @@ const config = {
         // Background color for <Card />
         card: {
           DEFAULT: "#ffffff",
-          foreground: "#020817",
+          foreground: "#112971",
+          dark: "#051851",
         },
       },
       borderRadius: {

@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../globals.css";
-import NavBar from "@/components/marketing/navbar/navbar";
+
+import { cn } from "@/lib/utils";
 import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { Providers } from "@/components/providers";
-import { cn } from "@/lib/utils";
-import Footer from "@/components/marketing/footer";
+import NavBar from "@/components/shared/navbar/navbar";
+import Footer from "@/components/shared/footer";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/lib/auth";
+import { redirect } from "next/navigation";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,6 +21,10 @@ export const metadata: Metadata = {
   description: "AI Powered Health Assistant",
 };
 
+export async function generateStaticParams() {
+  return [{ lang: "en" }, { lang: "hi" }];
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -24,9 +32,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={cn(inter.className, "max-w-screen-2xl mx-auto relative")}>
+      <body
+        className={cn(
+          inter.className,
+          "max-w-screen-2xl mx-auto relative flex flex-col min-h-screen items-center justify-between"
+        )}
+      >
         <Providers>
-          {children}
+          <NavBar />
+          <main className="py-20 w-full">{children}</main>
+          <Footer />
           <TailwindIndicator />
         </Providers>
       </body>
