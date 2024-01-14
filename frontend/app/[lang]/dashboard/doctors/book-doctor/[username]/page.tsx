@@ -2,7 +2,7 @@ import { Doctor } from "@prisma/client";
 import { redirect } from "next/navigation";
 
 import prisma from "@/lib/prisma";
-import Booking from "./_components/booking-calendar";
+import Booking from "./_components/booking";
 import About from "./_components/about";
 
 const page = async ({
