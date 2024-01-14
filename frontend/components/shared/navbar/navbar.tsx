@@ -12,7 +12,7 @@ import SigninButton from "@/components/auth/signInButton";
 
 export default function NavBar() {
   return (
-    <header className="fixed left-0 right-0">
+    <header className="fixed left-0 right-0 z-10">
       <nav className="bg-card border-border border-b px-4 lg:px-6 py-3.5">
         <div className="w-full flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2">

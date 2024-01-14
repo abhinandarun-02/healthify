@@ -40,7 +40,7 @@ export default function RootLayout({
       >
         <Providers>
           <NavBar />
-          <main className="py-20 w-full">{children}</main>
+          <main className="py-20 px-24 w-full">{children}</main>
           <Footer />
           <TailwindIndicator />
         </Providers>

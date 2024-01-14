@@ -32,7 +32,7 @@ const config = {
 
         // Primary colors for <Button />
         primary: {
-          DEFAULT: "#2b59e0",
+          DEFAULT: "#2563eb",
           foreground: "#f8fafc",
           background: {
             100: "#d5def9",
@@ -49,7 +49,7 @@ const config = {
 
         // Secondary colors for <Button />
         secondary: {
-          DEFAULT: "#f1f5f9",
+          DEFAULT: "#dedede",
           foreground: "#0f172a",
         },
 
