@@ -5,7 +5,7 @@ import { doctors } from "./_components/data";
 
 export const Page = () => {
   return (
-    <section className="px-8 mt-12">
+    <section className="px-8 mt-24">
       <div className="flex gap-4 relative">
         <Sidebar />
         <div className="w-full space-y-4">

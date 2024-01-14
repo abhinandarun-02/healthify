@@ -17,7 +17,7 @@ export default async function DashboardLayout({
   if (!session) redirect("/")
 
   return (
-    <div className={poppins.className + "  mt-20"}>
+    <div className={poppins.className + "  mt-[68.8px]"}>
       {children}
     </div>
   );

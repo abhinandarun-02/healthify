@@ -1,6 +1,9 @@
+import { redirect } from "next/navigation";
+
 import prisma from "@/lib/prisma";
 import { Doctor } from "@prisma/client";
-import { redirect } from "next/navigation";
+import Header from "./_components/header";
+
 
 const DoctorPage = async ({
   params,
@@ -12,7 +15,14 @@ const DoctorPage = async ({
   });
 
   if (!doctor) redirect("/dashboard");
-  return <div>{JSON.stringify(doctor)}</div>;
+
+  return (
+    <div className="relative min-h-screen">
+      <div>
+        <Header {...doctor} />
+      </div>
+    </div>
+  );
 };
 
 export default DoctorPage;

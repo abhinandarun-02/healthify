@@ -49,7 +49,7 @@ const config = {
 
         // Secondary colors for <Button />
         secondary: {
-          DEFAULT: "#dedede",
+          DEFAULT: "#f4f7fd",
           foreground: "#0f172a",
         },
 
