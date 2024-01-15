@@ -3,7 +3,7 @@ import { Sidebar } from "./_components/sidebar";
 import { DoctorCard } from "./_components/card";
 import { doctors } from "./_components/data";
 
-export const Page = () => {
+const Page = () => {
   return (
     <section className="px-8 mt-24">
       <div className="flex gap-4 relative">
