@@ -1,8 +1,10 @@
 import Image from "next/image";
 import { Briefcase, Languages, MapPin, ShieldCheck, Star } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { DoctorType } from "./data";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export const DoctorCard = (data: DoctorType) => {
   return (
@@ -85,7 +87,7 @@ export const DoctorCard = (data: DoctorType) => {
           </div>
         </div>
         <div className="flex flex-col gap-2">
-          <Button className="">Book Appointment</Button>
+          <Link href="/dashboard/doctors/appointment/john" className={cn(buttonVariants({variant:"default"}))}>Book Appointment</Link>
           <Button className="">Contact</Button>
         </div>
       </div>
