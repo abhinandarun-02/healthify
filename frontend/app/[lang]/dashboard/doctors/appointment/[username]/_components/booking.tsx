@@ -9,13 +9,40 @@ import { cn } from "@/lib/utils";
 import { CalendarCheck, Edit } from "lucide-react";
 import { useSession } from "next-auth/react";
 import { useState } from "react";
+import axios from "axios";
+import { Doctor, Patient, User } from "@prisma/client";
+import { toast } from "sonner";
 
-const Booking = () => {
+const Booking = (doctor: Doctor) => {
   const [date, setDate] = useState<Date | undefined>();
   const [slot, setSlot] = useState<string>("");
   const [step, setStep] = useState<"booking" | "payment">("booking");
 
   const { data: session } = useSession();
+
+  const onCheckout = async () => {
+    try {
+
+      const user = await axios.get<Patient>(`${process.env.NEXT_PUBLIC_API_URL}/user`, {
+        params: { userId: session?.user.id },
+      });
+      if (!user.data) throw new Error("User not found");
+
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_API_URL}/checkout`,
+        {
+          doctorId: doctor.id,
+          patientId: user.data.id,
+          slot: slot,
+          date: date,
+        }
+      );
+      window.location = response.data.url;
+    } catch (error) {
+      toast.error("Error occurred during checkout");
+      console.error("Error occurred during checkout:", error);
+    }
+  };
 
   return (
     <div className="flex items-center justify-center w-full">
@@ -57,7 +84,9 @@ const Booking = () => {
                 size="lg"
                 className="w-full mt-4"
                 disabled={!slot || !date}
-                onClick={() => setStep("payment")}
+                onClick={() => {
+                  setStep("payment");
+                }}
               >
                 Book Consultation
               </Button>
@@ -74,7 +103,10 @@ const Booking = () => {
                       {date?.toDateString() + ", " + slot}
                     </span>
                   </div>
-                  <Edit className="h-4 w-4 cursor-pointer" onClick={()=>setStep("booking")}/>
+                  <Edit
+                    className="h-4 w-4 cursor-pointer"
+                    onClick={() => setStep("booking")}
+                  />
                 </div>
                 <div className="grid w-full max-w-sm items-center gap-2">
                   <Label htmlFor="name">Email</Label>
@@ -107,12 +139,11 @@ const Booking = () => {
                 onClick={() => setStep("booking")}
               >
                 Back
-              </Button> 
-              <Button size="lg" className="w-full">
+              </Button>
+              <Button size="lg" className="w-full" onClick={onCheckout}>
                 Pay ₹ 500
               </Button>
             </CardFooter>
-
           </>
         )}
       </Card>

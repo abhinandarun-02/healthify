@@ -19,7 +19,7 @@ const page = async ({
     <div className="px-24 py-12">
       <div className="flex flex-col xl:flex-row gap-4">
         <About {...doctor} />
-        <Booking />
+        <Booking {...doctor}/>
       </div>
     </div>
   );

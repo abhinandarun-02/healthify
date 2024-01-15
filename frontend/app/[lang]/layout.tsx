@@ -7,9 +7,7 @@ import { TailwindIndicator } from "@/components/tailwind-indicator";
 import { Providers } from "@/components/providers";
 import NavBar from "@/components/shared/navbar/navbar";
 import Footer from "@/components/shared/footer";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/lib/auth";
-import { redirect } from "next/navigation";
+import { Toaster } from "@/components/ui/sonner";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -42,6 +40,7 @@ export default function RootLayout({
           <NavBar />
           <main className="w-full">{children}</main>
           <Footer />
+          <Toaster theme="light" richColors position="bottom-center" closeButton/>
           <TailwindIndicator />
         </Providers>
       </body>
