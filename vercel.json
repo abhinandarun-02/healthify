@@ -1,0 +1,18 @@
+{
+    "framework": "nextjs",
+    "devCommand": "next dev",
+    "build": "prisma generate && next build",
+    "installCommand": "npm install",
+    "regions": ["bom1"],
+    "env": {
+        "FRONTEND_APP_URL": "http://localhost:3000",
+        "NEXT_PUBLIC_API_URL": "http://localhost:3000/api",
+        "DATABASE_URL": "postgresql://root:root@localhost:5432/healthify?schema=public",
+        "GOOGLE_CLIENT_ID": "",
+        "GOOGLE_CLIENT_SECRET": "",
+        "NEXTAUTH_SECRET": "secret123",
+        "NEXTAUTH_URL": "http://localhost:3000",
+        "STRIPE_API_KEY": "",
+        "STRIPE_WEBHOOK_SECRET": ""
+    }
+}
