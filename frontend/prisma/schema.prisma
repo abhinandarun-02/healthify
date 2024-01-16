@@ -60,6 +60,7 @@ model Doctor {
   name         String
   username     String        @unique
   speciality   String
+  gender       String?
   image        String?
   location     String
   experience   Int

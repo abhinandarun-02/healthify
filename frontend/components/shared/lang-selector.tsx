@@ -21,7 +21,6 @@ export const LangSelector = () => {
     <Select
       defaultValue={pathname.substring(1, 3)}
       onValueChange={(value) => {
-        console.log(value);
         replace(`/${value}${pathname.substring(3)}`);
       }}
     >

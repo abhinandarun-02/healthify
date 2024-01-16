@@ -2,11 +2,11 @@ import Image from "next/image";
 import { Briefcase, Languages, MapPin, ShieldCheck, Star } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { DoctorType } from "./data";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { Doctor } from "@prisma/client";
 
-export const DoctorCard = (data: DoctorType) => {
+export const DoctorCard = (data: Doctor) => {
   return (
     <div className="card flex py-3.5 px-6 w-full border border-border text-card-foreground">
       <div className="about w-full basis-2/3">
