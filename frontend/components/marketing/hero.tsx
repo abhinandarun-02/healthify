@@ -4,6 +4,7 @@ import {
   ArrowUpRight,
   Book,
   ChevronRight,
+  ExternalLink,
   Video,
 } from "lucide-react";
 import Link from "next/link";
@@ -39,12 +40,12 @@ const Hero = () => {
             <Link
               className={cn(
                 buttonVariants({ variant: "secondary", size: "lg" }),
-                "py-4 px-4 gap-x-2 text-sm font-semibold w-56"
+                "py-4 px-4 gap-x-3 border border-border text-sm font-semibold w-56"
               )}
               href="https://hack-it-out.vercel.app/en"
             >
-              Voice AI
-              <ArrowUpRight />
+              Medic Bot
+              <ExternalLink className="h-5 w-5"/>
             </Link>
           </div>
 
