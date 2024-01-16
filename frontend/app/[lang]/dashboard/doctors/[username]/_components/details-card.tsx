@@ -67,7 +67,7 @@ const DetailsCard = (doctor: Doctor) => {
       </CardContent>
       <CardFooter className="flex gap-2">
         <Link
-          href={`/dashboard/doctors/book-doctor/${doctor.username}`}
+          href={`appointment/${doctor.username}`}
           className={cn(buttonVariants({ variant: "outline" }), "w-full")}
         >
           Book Appointment
