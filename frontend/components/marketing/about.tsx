@@ -22,18 +22,19 @@ const About = () => {
         </div>
         <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
-            We did not reinvent the wheel
+            Your Virtual Medical Assistant
           </h2>
           <p className="mb-4">
-            We are strategists, designers and developers. Innovators and problem
-            solvers. Small enough to be simple and quick, but big enough to
-            deliver the scope you want at the pace you need. Small enough to be
-            simple and quick, but big enough to deliver the scope you want at
-            the pace you need.
+            We are a team of medical professionals and technology experts
+            dedicated to providing you with the best virtual medical assistance.
+            Whether you need help with managing your health records, scheduling
+            appointments, or getting medical advice, our virtual medical
+            assistant is here to assist you.
           </p>
           <p>
-            We are strategists, designers and developers. Innovators and problem
-            solvers. Small enough to be simple and quick.
+            Our team consists of experienced strategists, designers, and
+            developers who are passionate about leveraging technology to improve
+            healthcare.
           </p>
         </div>
       </div>

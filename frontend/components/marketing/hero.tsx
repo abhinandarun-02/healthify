@@ -17,8 +17,8 @@ const Hero = () => {
       <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
         <div>
           <h1 className="block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white">
-            Start your journey with{" "}
-            <span className="text-primary">Healthify</span>
+            Start your health journey with{" "}
+            <span className="text-primary ml-2">Medic AI</span>
           </h1>
           <p className="mt-3 text-lg text-gray-800 dark:text-gray-400">
             Consult Top Doctors from the US & Europe before making crucial
@@ -29,23 +29,14 @@ const Hero = () => {
             <Link
               className={cn(
                 buttonVariants({ variant: "default", size: "lg" }),
-                "py-4 px-4 gap-x-2 text-sm font-semibold"
+                "py-4 px-4 gap-x-2 text-sm font-semibold w-56"
               )}
               href="#"
             >
               Get started
               <ChevronRight />
             </Link>
-            <Link
-              className={cn(
-                buttonVariants({ variant: "secondary", size: "lg" }),
-                "py-4 px-4 gap-x-2 text-sm font-semibold"
-              )}
-              href="#"
-            >
-              Contact sales team
-              <ArrowUpRight />
-            </Link>
+
           </div>
 
           <div className="mt-6 lg:mt-10 grid grid-cols-2 gap-x-5">

@@ -6,6 +6,15 @@ export default function Features() {
       <div className="mt-20 grid gap-6 grid-cols-2 sm:gap-12 lg:grid-cols-3 lg:gap-8">
         <div className="flex flex-col items-center">
           <h4 className="text-lg sm:text-xl font-semibold text-secondary-foreground ">
+            Happy Customers
+          </h4>
+          <p className="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-primary">
+            50K+
+          </p>
+          <p className="mt-1 text-gray-500">with Medic AI</p>
+        </div>
+        <div className="flex flex-col items-center">
+          <h4 className="text-lg sm:text-xl font-semibold text-secondary-foreground ">
             Accuracy rate
           </h4>
           <p className="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-primary">
@@ -16,22 +25,12 @@ export default function Features() {
 
         <div className="flex flex-col items-center">
           <h4 className="text-lg sm:text-xl font-semibold text-secondary-foreground ">
-            Startup businesses
+            Healthcare Professionals
           </h4>
           <p className="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-primary">
-            50K+
+            2k+
           </p>
-          <p className="mt-1 text-gray-500">users with Healthify</p>
-        </div>
-
-        <div className="flex flex-col items-center">
-          <h4 className="text-lg sm:text-xl font-semibold text-secondary-foreground ">
-            Happy customer
-          </h4>
-          <p className="mt-2 sm:mt-3 text-4xl sm:text-6xl font-bold text-primary">
-            85%
-          </p>
-          <p className="mt-1 text-gray-500">this year alone</p>
+          <p className="mt-1 text-gray-500">with Medic AI</p>
         </div>
       </div>
     </section>

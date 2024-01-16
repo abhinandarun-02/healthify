@@ -15,9 +15,9 @@ export default function NavBar() {
       <nav className="bg-card border-border border-b px-4 lg:px-6 py-3.5">
         <div className="w-full flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2">
-            <Image src={logo} width={35} height={35} alt="Healthify Logo" />
+            <Image src={logo} width={35} height={35} alt="Medic AI Logo" />
             <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-              Healthify
+              Medic AI
             </span>
           </Link>
 

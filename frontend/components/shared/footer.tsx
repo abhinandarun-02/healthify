@@ -12,7 +12,7 @@ const Footer = () => {
               <p className="ml-2 mb-4 text-sm text-gray-500 dark:text-gray-400 sm:mb-0">
                 &copy; 2024{" "}
                 <a href="#" className="hover:underline" target="_blank">
-                  Healthify.com
+                  Medicai.com
                 </a>
                 . All rights reserved.
               </p>
@@ -50,10 +50,10 @@ const Footer = () => {
                 href="#"
                 aria-label="Brand"
               >
-                Healthify
+                Medic AI
               </a>
               <p className="mt-1 text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-                © 2024 Healthify.
+                © 2024 Medic AI.
               </p>
             </div>
 

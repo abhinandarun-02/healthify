@@ -15,7 +15,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Healthify",
+  title: "Medic AI",
   description: "AI Powered Health Assistant",
 };
 

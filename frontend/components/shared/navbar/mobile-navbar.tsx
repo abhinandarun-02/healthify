@@ -70,7 +70,7 @@ export default function MobileMenu() {
             <NextLink href="/" className="flex items-center">
               <Image src={logo} alt="GitWonk Logo" className="h-9 w-auto" />
               <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-                Healthify
+                Medic AI
               </span>
             </NextLink>
             <Button
