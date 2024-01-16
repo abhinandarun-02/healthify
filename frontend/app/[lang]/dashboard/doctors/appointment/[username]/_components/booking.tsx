@@ -12,6 +12,7 @@ import { useState } from "react";
 import axios from "axios";
 import { Doctor, Patient, User } from "@prisma/client";
 import { toast } from "sonner";
+import { useOrigin } from "@/hooks/use-origin";
 
 const Booking = (doctor: Doctor) => {
   const [date, setDate] = useState<Date | undefined>();
@@ -19,22 +20,23 @@ const Booking = (doctor: Doctor) => {
   const [step, setStep] = useState<"booking" | "payment">("booking");
 
   const { data: session } = useSession();
+  const origin = useOrigin();
 
   const onCheckout = async () => {
     try {
-
-      const user = await axios.get<Patient>(`${process.env.NEXT_PUBLIC_API_URL}/user`, {
+      const user = await axios.get<Patient>(`${origin}/api/user`, {
         params: { userId: session?.user.id },
       });
       if (!user.data) throw new Error("User not found");
 
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/checkout`,
+        `${origin}/api/checkout`,
         {
           doctorId: doctor.id,
           patientId: user.data.id,
           slot: slot,
           date: date,
+          appUrl: origin,
         }
       );
       window.location = response.data.url;

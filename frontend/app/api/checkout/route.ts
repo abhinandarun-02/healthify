@@ -6,7 +6,7 @@ import prismadb from "@/lib/prisma";
 import { Appointment } from "@prisma/client";
 
 export async function POST(req: Request) {
-  const { doctorId, patientId, date, slot } = await req.json();
+  const { doctorId, patientId, date, slot, appUrl } = await req.json();
 
   if (!doctorId) {
     return new NextResponse("Doctor id is required", { status: 400 });
@@ -22,6 +22,10 @@ export async function POST(req: Request) {
 
   if (!slot) {
     return new NextResponse("Slot is required", { status: 400 });
+  }
+
+  if (!appUrl) {
+    return new NextResponse("App url is required", { status: 400 });
   }
 
   const doctor = await prismadb.doctor.findUnique({ where: { id: doctorId } });
@@ -67,8 +71,8 @@ export async function POST(req: Request) {
     phone_number_collection: {
       enabled: true,
     },
-    success_url: `${process.env.FRONTEND_APP_URL}/dashboard?success=1`,
-    cancel_url: `${process.env.FRONTEND_APP_URL}/dashboard?canceled=1`,
+    success_url: `${appUrl}/dashboard?success=1`,
+    cancel_url: `${appUrl}/dashboard?canceled=1`,
     metadata: {
       appointmentId: appointment.id,
     },

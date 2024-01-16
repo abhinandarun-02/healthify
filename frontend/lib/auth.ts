@@ -34,7 +34,7 @@ export const authOptions: AuthOptions = {
   },
   events: {
     createUser: async (message) => {
-      await prisma.patient.create({ data: { userId: message.user.id } });
+      await prisma.patient.create({ data: { userId: message.user.id, name:message.user.name } });
     },
   },
 };
