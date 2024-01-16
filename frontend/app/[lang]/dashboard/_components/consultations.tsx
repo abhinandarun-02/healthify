@@ -32,7 +32,7 @@ async function ConsultationList() {
     where: { userId: user?.id },
   });
   const consultations = await prisma.appointment.findMany({
-    where: { patientId: patient?.id, completed: false },
+    where: { patientId: patient?.id, completed: false, isPaid:true },
     include: { doctor: true },
     take: 3,
     orderBy: { date: 'asc' }, // Sort by date in ascending order
