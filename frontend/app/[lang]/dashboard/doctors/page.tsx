@@ -2,12 +2,13 @@ import React from "react";
 import { Sidebar } from "./_components/sidebar";
 import { DoctorCard } from "./_components/card";
 import prisma from "@/lib/prisma";
+import { Locale } from "@/i18n-config";
 
 const Page = async ({
   params,
   searchParams,
 }: {
-  params: { lang: string };
+  params: { lang: Locale };
   searchParams: {
     speciality: string | null;
     page: string | null;
@@ -58,7 +59,7 @@ const Page = async ({
         <Sidebar />
         <div className="w-full space-y-4">
           {doctors.map((doctor, index) => (
-            <DoctorCard key={index} {...doctor} />
+            <DoctorCard key={index} doctor = {doctor} lang = {params.lang} />
           ))}
         </div>
       </div>
