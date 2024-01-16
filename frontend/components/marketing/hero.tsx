@@ -31,12 +31,21 @@ const Hero = () => {
                 buttonVariants({ variant: "default", size: "lg" }),
                 "py-4 px-4 gap-x-2 text-sm font-semibold w-56"
               )}
-              href="#"
+              href="dashboard"
             >
               Get started
               <ChevronRight />
             </Link>
-
+            <Link
+              className={cn(
+                buttonVariants({ variant: "secondary", size: "lg" }),
+                "py-4 px-4 gap-x-2 text-sm font-semibold w-56"
+              )}
+              href="https://hack-it-out.vercel.app/en"
+            >
+              Voice AI
+              <ArrowUpRight />
+            </Link>
           </div>
 
           <div className="mt-6 lg:mt-10 grid grid-cols-2 gap-x-5">
