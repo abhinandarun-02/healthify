@@ -20,20 +20,21 @@ const Booking = (doctor: Doctor) => {
   const [step, setStep] = useState<"booking" | "payment">("booking");
 
   const { data: session } = useSession();
+  const user = session?.user as User;
   const origin = useOrigin();
 
   const onCheckout = async () => {
     try {
-      const user = await axios.get<Patient>(`${origin}/api/user`, {
-        params: { userId: session?.user.id },
+      const patient = await axios.get<Patient>(`${origin}/api/user`, {
+        params: { userId: user.id },
       });
-      if (!user.data) throw new Error("User not found");
+      if (!patient.data) throw new Error("User not found");
 
       const response = await axios.post(
         `${origin}/api/checkout`,
         {
           doctorId: doctor.id,
-          patientId: user.data.id,
+          patientId: patient.data.id,
           slot: slot,
           date: date,
           appUrl: origin,
