@@ -68,7 +68,7 @@ async function ConsultationList() {
                 <span>{consultation.slot}</span>
               </div>
             </div>
-            <div className="flex justify-around">
+            <div className="flex justify-center gap-10">
               <Button variant="outline">Cancel</Button>
               <Link href={`dashboard/doctors/${consultation.doctor.username}`} className={cn(buttonVariants({variant:"default"}))}>View Profile</Link>
             </div>
